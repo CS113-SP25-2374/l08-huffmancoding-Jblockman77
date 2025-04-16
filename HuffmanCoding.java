@@ -17,12 +17,12 @@ public class HuffmanCoding implements HuffmanInterface {
         public NodeRL(NodeRL left, NodeRL right){
             this.left = left;
             this.right = right;
-            this.freq = left.freq + right.freq;
+            this.freq = String.valueOf((Integer.parseInt(left.freq) + Integer.parseInt(right.freq)));
             this.value = 0;
         }
 
         public int compareTo(NodeRL node){
-            return Integer.parseInt(this.freq) - Integer.parseInt(node.freq);
+            return (Integer.parseInt(this.freq) - Integer.parseInt(node.freq));
         }
     }
 
@@ -138,10 +138,13 @@ public class HuffmanCoding implements HuffmanInterface {
 }
 
 
-// 00 10 111 10 110 01
+// 100 0 111 0 110 101
 // R   a  f   a  i   l
-//               R
-//            L     A
-//                I   F
-// A has the highest frequency and should BE ON THE TOPPPPPPP.
-// THE CODE WORKS STILL, I think I just did a binary search tree by accident, though
+//
+//               a
+//            ?     ?
+//         R    l i    f
+//
+// A has the highest frequency and should BE ON THE TOPPPPPPP. - Fixed
+// THE CODE WORKS STILL, I think I just did a binary search tree by accident, though - Not anymore.
+// Im no longer a fan of Huffman
